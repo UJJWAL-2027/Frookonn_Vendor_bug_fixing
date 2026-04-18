@@ -14,13 +14,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
-export type RootStackParamList = {
-    VendorSplashScreen: undefined;
-    VendorRegisterScreen: undefined;
-    VendorLogin: undefined;
-    VendorDashboard: undefined;
-    ResetPassword: undefined;
-};
+import { RootStackParamList } from '../navigation/types';
 
 type VendorLoginNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
@@ -37,7 +31,7 @@ const VendorLoginScreen: React.FC<Props> = ({ navigation }) => {
 
     const handleLogin = () => {
         console.log('Login attempt:', { email, password });
-        navigation.navigate('VendorDashboard');
+        navigation.navigate('MainApp');
     };
 
     const handleResetPassword = () => {

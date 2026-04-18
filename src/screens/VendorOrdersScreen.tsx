@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/types';
 
 const { width } = Dimensions.get('window');
 
@@ -111,36 +111,6 @@ const VendorOrdersScreen: React.FC<Props> = ({ navigation }) => {
                 </View>
             </ScrollView>
 
-            {/* BOTTOM TAB NAVIGATION */}
-            <View style={styles.bottomTabNav}>
-                <TouchableOpacity 
-                    style={styles.tabItem}
-                    onPress={() => navigation.navigate('VendorDashboard')}
-                >
-                    <Text style={{ fontSize: 20 }}>🏠</Text>
-                    <Text style={styles.tabText}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Text style={{ fontSize: 20 }}>📁</Text>
-                    <Text style={styles.tabText}>Categories</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Text style={{ fontSize: 20 }}>📜</Text>
-                    <Text style={[styles.tabText, { color: '#ff7a00' }]}>Orders</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                    style={styles.tabItem}
-                    onPress={() => navigation.navigate('VendorProductList')}
-                >
-                    <Text style={{ fontSize: 20 }}>📦</Text>
-                    <Text style={styles.tabText}>Products</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorProfile')}>
-                    <Text style={{ fontSize: 20 }}>👤</Text>
-                    <Text style={styles.tabText}>Profile</Text>
-                </TouchableOpacity>
-
-            </View>
         </SafeAreaView>
     );
 };
@@ -311,25 +281,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: '600',
     },
-    bottomTabNav: {
-        backgroundColor: '#fff',
-        borderTopWidth: 1,
-        borderColor: '#ccc',
-        height: 65,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        paddingBottom: 5,
-    },
-    tabItem: {
-        alignItems: 'center',
-    },
-    tabText: {
-        fontSize: 10,
-        fontWeight: '500',
-        color: '#000',
-        marginTop: 2,
-    },
+
 });
 
 export default VendorOrdersScreen;

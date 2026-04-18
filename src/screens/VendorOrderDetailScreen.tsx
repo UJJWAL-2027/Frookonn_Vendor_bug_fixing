@@ -180,33 +180,10 @@ const VendorOrderDetailScreen: React.FC<Props> = ({ navigation }) => {
                 {/* Safe space for navigation bar */}
                 <View style={{ height: 80 }} />
             </ScrollView>
-
-            {/* Bottom Navigation Bar */}
-            <View style={styles.bottomNav}>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={styles.navIcon}>🏠</Text>
-                    <Text style={styles.navLabelInactive}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={styles.navIcon}>📁</Text>
-                    <Text style={styles.navLabelInactive}>Categories</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={styles.navIcon}>📦</Text>
-                    <Text style={styles.navLabelInactive}>Products</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={[styles.navIcon, { color: '#F59E0B' }]}>📜</Text>
-                    <Text style={styles.navLabelActive}>Orders</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={styles.navIcon}>👤</Text>
-                    <Text style={styles.navLabelInactive}>Profile</Text>
-                </TouchableOpacity>
-            </View>
         </SafeAreaView>
     );
 };
+
 
 const styles = StyleSheet.create({
     root: {
@@ -498,42 +475,8 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         color: '#FFFFFF',
     },
-    bottomNav: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: 70,
-        backgroundColor: '#FFFFFF',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: -2 },
-        shadowOpacity: 0.05,
-        shadowRadius: 5,
-        elevation: 10,
-        paddingBottom: Platform.OS === 'ios' ? 20 : 0,
-    },
-    navItem: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    navIcon: {
-        fontSize: 22,
-        color: '#444444',
-    },
-    navLabelInactive: {
-        fontSize: 10,
-        color: '#666666',
-        marginTop: 4,
-    },
-    navLabelActive: {
-        fontSize: 10,
-        color: '#F59E0B',
-        fontWeight: '600',
-        marginTop: 4,
     },
 });
 
 export default VendorOrderDetailScreen;
+

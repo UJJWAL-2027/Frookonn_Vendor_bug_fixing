@@ -14,7 +14,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/types';
 
 const { width } = Dimensions.get('window');
 
@@ -226,35 +226,6 @@ const VendorEditProductScreen: React.FC<Props> = ({ navigation, route }) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-
-            {/* BOTTOM NAVIGATION BAR */}
-            <View style={styles.bottomTabNav}>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorDashboard')}>
-                    <Text style={{ fontSize: 20 }}>🏠</Text>
-                    <Text style={styles.tabText}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorProductList')}>
-                    <Text style={{ fontSize: 20 }}>📦</Text>
-                    <Text style={[styles.tabText, { color: '#ff7a00' }]}>Products</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem}>
-                    <Text style={{ fontSize: 20 }}>📁</Text>
-                    <Text style={styles.tabText}>Categories</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                    style={styles.tabItem}
-                    onPress={() => navigation.navigate('VendorOrders')}
-                >
-                    <Text style={{ fontSize: 20 }}>📜</Text>
-                    <Text style={styles.tabText}>Orders</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('VendorProfile')}>
-                    <Text style={{ fontSize: 20 }}>👤</Text>
-                    <Text style={styles.tabText}>Profile</Text>
-                </TouchableOpacity>
-
-            </View>
-
         </SafeAreaView>
     );
 };
@@ -471,29 +442,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
     },
-    bottomTabNav: {
-        backgroundColor: '#F1F1F1',
-        borderTopWidth: 2,
-        borderColor: '#999',
-        height: 65,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        paddingBottom: 5,
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0,
-    },
-    tabItem: {
-        alignItems: 'center',
-    },
-    tabText: {
-        fontSize: 10,
-        fontWeight: '600',
-        color: '#000',
-        marginTop: 4,
-    },
+
 });
 
 export default VendorEditProductScreen;

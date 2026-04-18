@@ -15,7 +15,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 // Note: Temporarily removed external icons/charts to ensure 500 error is resolved
 // We can re-add them once the base screen is stable.
 
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/types';
 
 
 type VendorDashboardNavigationProp = NativeStackNavigationProp<
@@ -175,37 +175,6 @@ const VendorDashboardScreen: React.FC<Props> = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
-
-            {/* Bottom Navigation */}
-            <View style={styles.bottomNav}>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={{ fontSize: 20 }}>🏠</Text>
-                    <Text style={[styles.navText, { color: '#ff7a00' }]}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem}>
-                    <Text style={{ fontSize: 20 }}>📁</Text>
-                    <Text style={styles.navText}>Categories</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.navItem}
-                    onPress={() => navigation.navigate('VendorOrders')}
-                >
-                    <Text style={{ fontSize: 20 }}>📜</Text>
-                    <Text style={styles.navText}>Orders</Text>
-                </TouchableOpacity>
-                <TouchableOpacity 
-                    style={styles.navItem} // Changed from tabItem to navItem for consistency with existing styles
-                    onPress={() => navigation.navigate('VendorProductList')}
-                >
-                    <Text style={{ fontSize: 20 }}>📦</Text>
-                    <Text style={styles.navText}>Products</Text> {/* Changed from tabText to navText for consistency */}
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.navItem} onPress={() => navigation.navigate('VendorProfile')}>
-                    <Text style={{ fontSize: 20 }}>👤</Text>
-                    <Text style={styles.navText}>Profile</Text>
-                </TouchableOpacity>
-
-            </View>
         </SafeAreaView>
     );
 };
@@ -400,25 +369,7 @@ const styles = StyleSheet.create({
         fontSize: 11,
         fontWeight: 'bold',
     },
-    bottomNav: {
-        height: 60,
-        backgroundColor: '#ffffff',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        borderTopWidth: 1,
-        borderTopColor: '#eeeeee',
-        paddingBottom: Platform.OS === 'ios' ? 10 : 0,
-    },
-    navItem: {
-        alignItems: 'center',
-    },
-    navText: {
-        fontSize: 10,
-        marginTop: 2,
-        fontWeight: '500',
-        color: '#000',
-    },
+
 });
 
 export default VendorDashboardScreen;

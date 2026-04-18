@@ -10,15 +10,11 @@ import {
 } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type RootStackParamList = {
-    VendorSplashScreen: undefined;
-    VendorRegisterScreen: undefined;
-    VendorLogin: undefined;
-};
+import { RootStackParamList } from '../navigation/types';
 
 type VendorSplashScreenNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
-    'VendorSplashScreen'
+    'VendorSplash'
 >;
 
 interface Props {
@@ -39,7 +35,7 @@ const VendorSplashScreen: React.FC<Props> = ({ navigation }) => {
     }, [fadeAnim]);
 
     const handleGetStarted = () => {
-        navigation.navigate('VendorRegisterScreen');
+        navigation.navigate('VendorRegister');
     };
 
     return (

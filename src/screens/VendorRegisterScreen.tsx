@@ -13,15 +13,11 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type RootStackParamList = {
-    VendorSplashScreen: undefined;
-    VendorRegisterScreen: undefined;
-    VendorLogin: undefined;
-};
+import { RootStackParamList } from '../navigation/types';
 
 type VendorRegisterScreenNavigationProp = NativeStackNavigationProp<
     RootStackParamList,
-    'VendorRegisterScreen'
+    'VendorRegister'
 >;
 
 interface Props {
