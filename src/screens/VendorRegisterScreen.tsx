@@ -35,6 +35,7 @@ const VendorRegisterScreen: React.FC<Props> = ({ navigation }) => {
 
     const handleSendOTP = () => {
         console.log('Send OTP to:', mobileNumber);
+        navigation.navigate('VendorRegisterOTP', { mobileNumber });
     };
 
     const handleCreateAccount = () => {

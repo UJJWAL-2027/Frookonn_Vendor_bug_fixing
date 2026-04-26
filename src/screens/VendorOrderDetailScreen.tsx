@@ -12,27 +12,15 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type RootStackParamList = {
-    VendorSplashScreen: undefined;
-    VendorRegisterScreen: undefined;
-    VendorLogin: undefined;
-    VendorDashboard: undefined;
-    VendorOrders: undefined;
-    VendorOrderDetail: { orderId: string };
-};
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { OrdersStackParamList } from '../navigation/types';
 
-type VendorOrderDetailNavigationProp = NativeStackNavigationProp<
-    RootStackParamList,
-    'VendorOrderDetail'
->;
-
-interface Props {
-    navigation: VendorOrderDetailNavigationProp;
-}
+type Props = NativeStackScreenProps<OrdersStackParamList, 'VendorOrderDetail'>;
 
 const { width } = Dimensions.get('window');
 
-const VendorOrderDetailScreen: React.FC<Props> = ({ navigation }) => {
+const VendorOrderDetailScreen: React.FC<Props> = ({ route, navigation }) => {
+    const { orderId } = route.params;
     return (
         <SafeAreaView style={styles.root}>
             {/* Top Header */}
@@ -474,7 +462,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '600',
         color: '#FFFFFF',
-    },
     },
 });
 

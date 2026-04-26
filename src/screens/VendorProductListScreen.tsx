@@ -13,12 +13,12 @@ import {
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/types';
+import { ProductsStackParamList } from '../navigation/types';
 
 const { width } = Dimensions.get('window');
 
 type VendorProductListNavigationProp = NativeStackNavigationProp<
-    RootStackParamList,
+    ProductsStackParamList,
     'VendorProductList'
 >;
 

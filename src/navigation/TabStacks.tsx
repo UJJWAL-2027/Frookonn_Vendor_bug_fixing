@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import VendorDashboardScreen from '../screens/VendorDashboardScreen';
 import VendorCategoriesScreen from '../screens/VendorCategoriesScreen';
 import VendorOrdersScreen from '../screens/VendorOrdersScreen';
-import VendorOrderDetailsScreen from '../screens/VendorOrderDetailsScreen';
+import VendorOrderDetailScreen from '../screens/VendorOrderDetailScreen';
 import VendorProductListScreen from '../screens/VendorProductListScreen';
 import VendorAddProductScreen from '../screens/VendorAddProductScreen';
 import VendorEditProductScreen from '../screens/VendorEditProductScreen';
@@ -38,7 +38,7 @@ const OrdersStackLayer = createNativeStackNavigator<OrdersStackParamList>();
 export const OrdersStack = () => (
   <OrdersStackLayer.Navigator screenOptions={{ headerShown: false }}>
     <OrdersStackLayer.Screen name="VendorOrders" component={VendorOrdersScreen} />
-    <OrdersStackLayer.Screen name="VendorOrderDetail" component={VendorOrderDetailsScreen} />
+    <OrdersStackLayer.Screen name="VendorOrderDetail" component={VendorOrderDetailScreen} />
   </OrdersStackLayer.Navigator>
 );
 

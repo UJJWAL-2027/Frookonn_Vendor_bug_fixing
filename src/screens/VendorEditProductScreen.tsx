@@ -14,16 +14,16 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../navigation/types';
+import { ProductsStackParamList } from '../navigation/types';
 
 const { width } = Dimensions.get('window');
 
 type VendorEditProductNavigationProp = NativeStackNavigationProp<
-    RootStackParamList,
+    ProductsStackParamList,
     'VendorEditProduct'
 >;
 
-type VendorEditProductRouteProp = RouteProp<RootStackParamList, 'VendorEditProduct'>;
+type VendorEditProductRouteProp = RouteProp<ProductsStackParamList, 'VendorEditProduct'>;
 
 interface Props {
     navigation: VendorEditProductNavigationProp;
